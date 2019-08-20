@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"fishhub/src/fish/controllers"
+	"fishhub/fish/controllers"
 	"github.com/astaxie/beego"
 )
 

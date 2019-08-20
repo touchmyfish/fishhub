@@ -1,7 +1,7 @@
 package test
 
 import (
-	_ "fishhub/src/fish/routers"
+	_ "fishhub/fish/routers"
 	"github.com/astaxie/beego/logs"
 	"net/http"
 	"net/http/httptest"

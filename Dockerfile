@@ -12,7 +12,7 @@ RUN go mod download
 
 COPY . .
 
-WORKDIR /srv/src/fish
+WORKDIR /srv/fish
 
 RUN go build -ldflags="-s -w" -o main main.go
 

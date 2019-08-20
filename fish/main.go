@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "fishhub/src/fish/routers"
+	_ "fishhub/fish/routers"
 	"github.com/astaxie/beego"
 )
 
