@@ -1,6 +1,14 @@
 version: '3'
 services:
-  web:
+  api_srv:
     build: .
+    container_name: api_srv
     ports:
       - "8080:8080"
+
+  pg_srv:
+    image: postgres:12
+    container_name: pg_srv
+    ports:
+      - "5432:5432"
+
