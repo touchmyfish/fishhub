@@ -8,17 +8,11 @@
 package routers
 
 import (
+	"fishhub/fish/controllers"
+
 	"github.com/astaxie/beego"
 )
 
 func init() {
-	ns := beego.NewNamespace("/v1",
-		beego.NSNamespace("/object",
-			beego.NSInclude(),
-		),
-		beego.NSNamespace("/user",
-			beego.NSInclude(),
-		),
-	)
-	beego.AddNamespace(ns)
+	beego.Router("/api/videos", &controllers.VideoController{})
 }

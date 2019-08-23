@@ -6,6 +6,7 @@ import (
 	_ "fishhub/fish/models"
 	_ "fishhub/fish/routers"
 
+
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
 	"github.com/astaxie/beego/orm"
