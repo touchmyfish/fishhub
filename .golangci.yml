@@ -1,0 +1,32 @@
+linters-settings:
+  govet:
+    check-shadowing: true
+  gofmt:
+    simplify: true
+  golint:
+    min-confidence: 1.5
+  gocyclo:
+    min-complexity: 10
+  dupl:
+    threshold: 100
+  goconst:
+    min-len: 2
+    min-occurrences: 5
+  misspell:
+    locale: US
+
+linters:
+  enable:
+    - govet
+    - errcheck
+    - megacheck
+    - goconst
+    - gofmt
+    - goimports
+    - golint
+    - ineffassign
+
+  enable-all: false
+  disable:
+    - maligned
+    - prealloc

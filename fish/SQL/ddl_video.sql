@@ -1,19 +1,21 @@
-CREATE TABLE video (
-  id serial NOT NULL,
-  video_id varchar DEFAULT NULL,
-  title varchar DEFAULT NULL,
-  series integer DEFAULT NULL,
-  area varchar DEFAULT NULL,
-  status integer DEFAULT NULL,
-  published_time timestamp without time zone,
-  create_time timestamp without time zone,
-  update_time timestamp without time zone,
-  captions integer DEFAULT NULL,
-  director varchar DEFAULT NULL,
-  actor varchar DEFAULT NULL,
-  plot_category integer DEFAULT NULL,
-  level_category integer DEFAULT NULL,
-  other_category integer DEFAULT NULL,
-  description varchar DEFAULT NULL,
-  PRIMARY KEY (id)
+--  Table Structure for `fishhub/fish/models.Video`
+-- --------------------------------------------------
+CREATE TABLE IF NOT EXISTS "video" (
+                                     "id" serial NOT NULL PRIMARY KEY,
+                                     "video_id" text NOT NULL DEFAULT '' ,
+                                     "title" text NOT NULL DEFAULT '' ,
+                                     "series" text NOT NULL DEFAULT '' ,
+                                     "area" text NOT NULL DEFAULT '' ,
+                                     "status" text NOT NULL DEFAULT '' ,
+                                     "captions" text NOT NULL DEFAULT '' ,
+                                     "director" text NOT NULL DEFAULT '' ,
+                                     "actor" text NOT NULL DEFAULT '' ,
+                                     "plot_category" text NOT NULL DEFAULT '' ,
+                                     "level_category" text NOT NULL DEFAULT '' ,
+                                     "other_category" text NOT NULL DEFAULT '' ,
+                                     "description" text NOT NULL DEFAULT '' ,
+                                     "published_time" timestamp with time zone NOT NULL,
+                                     "create_time" timestamp with time zone NOT NULL,
+                                     "update_time" timestamp with time zone NOT NULL
 );
+

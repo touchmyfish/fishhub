@@ -8,22 +8,16 @@
 package routers
 
 import (
-	"fishhub/fish/controllers"
-
 	"github.com/astaxie/beego"
 )
 
 func init() {
 	ns := beego.NewNamespace("/v1",
 		beego.NSNamespace("/object",
-			beego.NSInclude(
-				&controllers.ObjectController{},
-			),
+			beego.NSInclude(),
 		),
 		beego.NSNamespace("/user",
-			beego.NSInclude(
-				&controllers.UserController{},
-			),
+			beego.NSInclude(),
 		),
 	)
 	beego.AddNamespace(ns)

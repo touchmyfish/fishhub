@@ -1,12 +1,14 @@
-CREATE TABLE episode (
-  id serial NOT NULL ,
-  video_id varchar DEFAULT NULL,
-  title varchar DEFAULT NULL,
-  duration time DEFAULT NULL,
-  play_url varchar DEFAULT NULL,
-  source integer DEFAULT NULL,
-  create_time timestamp without time zone,
-  update_time timestamp without time zone,
-  description varchar DEFAULT NULL,
-  PRIMARY KEY (id)
+-- --------------------------------------------------
+--  Table Structure for `fishhub/fish/models.Episode`
+-- --------------------------------------------------
+CREATE TABLE IF NOT EXISTS "episode" (
+                                       "id" serial NOT NULL PRIMARY KEY,
+                                       "video_id" text NOT NULL DEFAULT '' ,
+                                       "title" text NOT NULL DEFAULT '' ,
+                                       "play_url" text NOT NULL DEFAULT '' ,
+                                       "source" text NOT NULL DEFAULT '' ,
+                                       "description" text NOT NULL DEFAULT '' ,
+                                       "duration" text NOT NULL DEFAULT '' ,
+                                       "create_time" timestamp with time zone NOT NULL,
+                                       "update_time" timestamp with time zone NOT NULL
 );
