@@ -1,11 +1,11 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 
 	_ "fishhub/fish/models"
 	_ "fishhub/fish/routers"
-
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
@@ -14,6 +14,11 @@ import (
 )
 
 func init() {
+	confPath := flag.String("c", "conf/app.conf", "Config.")
+
+	flag.Parse()
+
+	beego.LoadAppConfig("ini", *confPath)
 
 	err := orm.RegisterDriver("postgres", orm.DRPostgres)
 	if err != nil {
