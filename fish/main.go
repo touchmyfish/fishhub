@@ -18,10 +18,11 @@ func init() {
 
 	flag.Parse()
 
-	beego.LoadAppConfig("ini", *confPath)
+	if err := beego.LoadAppConfig("ini", *confPath); err != nil {
+		panic(fmt.Sprintf("Beego load app config failed, err: %s", err))
+	}
 
-	err := orm.RegisterDriver("postgres", orm.DRPostgres)
-	if err != nil {
+	if err := orm.RegisterDriver("postgres", orm.DRPostgres); err != nil {
 		panic(err)
 	}
 
@@ -36,12 +37,11 @@ func init() {
 
 	logs.Info("PostgreSQL data source is %s", sqlConn)
 
-	err = orm.RegisterDataBase("default", "postgres", sqlConn)
-	if err != nil {
+	if err := orm.RegisterDataBase("default", "postgres", sqlConn); err != nil {
 		panic(err)
 	}
-	err = orm.RunSyncdb("default", true, true)
-	if err != nil {
+
+	if err := orm.RunSyncdb("default", true, true); err != nil {
 		panic(err)
 	}
 }
